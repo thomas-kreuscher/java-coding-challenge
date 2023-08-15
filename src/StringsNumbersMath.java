@@ -1,4 +1,73 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringsNumbersMath {
+
+  static void countChar(String x) {
+
+    // 1. Counting duplicate characters: Write a program that 
+    // counts duplicate characters from a given string.
+
+    int count_char = 0;
+    x = x.toLowerCase().replaceAll("\\s+", "");
+    List<Character> dub_char_list = new ArrayList<Character>();
+    
+
+    for (int i = 0; i <= x.length() - 2; i++) {
+      for (int j = i + 1; j <= x.length() - 1; j++) {
+        if (x.charAt(i) == x.charAt(j) && !dub_char_list.contains(x.charAt(i))) {
+          dub_char_list.add(x.charAt(i));
+          count_char += 1;
+        } 
+        else {
+          count_char += 0;
+        }
+      }
+    }
+    System.out.println("----------");
+    System.out.println(count_char);
+    System.out.println("Dublicated characters: " + dub_char_list);
+    System.out.println("----------");
+  }
+
+
+  static void firstNonRepChar(String x) {
+
+    // 2. Finding the first non-repeated character: Write a program that 
+    // returns the first non-repeated character from a given string.
+
+    x = x.toLowerCase().replaceAll("\\s+", "");
+    List<Character> dub_char_list = new ArrayList<Character>();
+
+    for (int i = 0; i <= x.length()-2; i++) {
+      for (int j = i+1; j <= x.length()-1; j++) {
+        while (x.charAt(i) == x.charAt(j)) {
+          dub_char_list.add(x.charAt(i));
+          break;
+        }
+      }
+    }
+
+    for (int i = 0; i <= x.length()-1; i++) {
+      if (!dub_char_list.contains(x.charAt(i))) {
+        System.out.println("This is the first non-repeated character is: " + x.charAt(i));
+        break;
+      }
+    }
+    System.out.println("These are the duplicated characters: " + dub_char_list);
+  }
+
+  static void reverseLettWord(String x) {
+
+    // 3. Reversing letters and words: Write a program that reverses 
+    // the letters of each word and a program that reverses the 
+    // letters of each word and the words themselves.
+    
+    System.out.println(x);
+    for (int i = x.length()-1; i>=0; i--) {
+      System.out.println(x.charAt(i));
+    }
+  }
 
   private static void isDigit(String x) {
 
@@ -59,7 +128,7 @@ public class StringsNumbersMath {
 
   static void stringConverter(String x, String y) {
 
-    // 7 Converting String into int, long, float, or double:
+    // 7. Converting String into int, long, float, or double:
     // Write a program that converts the given String object
     // (representing a number) into int, long, float, or double.
 
@@ -114,6 +183,14 @@ public class StringsNumbersMath {
     String dtype = "float";
     System.out.println("----------");
     System.out.println("This is the String = " + text);
+    System.out.println("-----Nr 1-----");
+    countChar(text);
+    System.out.println("----Nr 2------");
+    firstNonRepChar(text);
+    System.out.println("----------");
+    System.out.println("----------");
+    System.out.println("----------");
+    reverseLettWord(text);
     System.out.println("----------");
     isDigit(text);
     System.out.println("----------");
