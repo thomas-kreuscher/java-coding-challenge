@@ -1,8 +1,9 @@
-// Reversing letters and words: Write a program that reverses 
-// the letters of each word and a program that reverses the 
-// letters of each word and the words themselves.
+
 
 public class ReverseLetters {
+  // Reversing letters and words: Write a program that reverses 
+  // the letters of each word and a program that reverses the 
+  // letters of each word and the words themselves.
 
   static void reverseLettWord(String x) {
     System.out.println(x);
