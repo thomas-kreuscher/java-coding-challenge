@@ -1,6 +1,8 @@
 package com.example.bankapp;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BankAccount {
 
@@ -9,6 +11,7 @@ public class BankAccount {
   private Object kto_inhaber;
   private LocalDate erstellungsdatum;
   private int kontostand;
+  private List<String> transactHistList = new ArrayList<>();
 
   public BankAccount(String kto_inhaber, int kontostand) {
     this.kto_id = kto_idCounter++;
@@ -29,6 +32,14 @@ public class BankAccount {
     return erstellungsdatum;
   }
 
+  public List<String> getTransactionHistory() {
+    return transactHistList;
+  }
+
+  public void setTransactionHistory(String log) {
+    transactHistList.add(log);
+  }
+
   public int getKontostand() {
     return kontostand;
   }
@@ -40,5 +51,4 @@ public class BankAccount {
   public void subtractFromKontostand(int valueToSubtract) {
     this.kontostand -= valueToSubtract;
   }
-
 }
