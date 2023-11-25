@@ -1,2 +1,2 @@
 # java-coding-challenge
-This repository contains various Java tasks.
+This repository contains Java tasks.
